@@ -1,0 +1,51 @@
+﻿<Window x:Class="ChessUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChessUI"
+        mc:Ignorable="d"
+        Title="Chess" Width="600" SizeToContent="Height"
+        Icon="Assets/icon.ico"
+        ResizeMode="CanMinimize"
+        ShowInTaskbar="True"
+        WindowStartupLocation="CenterScreen"
+        Background="#101010"
+        KeyDown="Window_KeyDown">
+    <Viewbox>
+        <Grid>
+            <Grid x:Name="BoardGrid"
+                  Width="600"
+                  Height="600"
+                  MouseDown="BoardGrid_MouseDown"> 
+                <Grid.Background>
+                    <ImageBrush ImageSource="Assets/Board.png"/>
+                </Grid.Background>
+
+                <!-- Last-move highlights -->
+                <UniformGrid x:Name="LastMoveGrid"
+                     Rows="8"
+                     Columns="8"
+                     IsHitTestVisible="False">
+                </UniformGrid>
+
+                <!-- Possible-move highlights -->
+                <UniformGrid x:Name="HighlightGrid"
+                     Rows="8"
+                     Columns="8"
+                     IsHitTestVisible="False">
+                </UniformGrid>
+
+                <!-- Piece images -->
+                <UniformGrid x:Name="PieceGrid"
+                     Rows="8"
+                     Columns="8"
+                     RenderOptions.BitmapScalingMode="HighQuality">
+                </UniformGrid>
+
+                <ContentControl x:Name="MenuContainer"/>
+            </Grid>
+        </Grid>
+        
+    </Viewbox>
+</Window>

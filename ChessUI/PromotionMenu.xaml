@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="ChessUI.PromotionMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ChessUI">
+    <Border Width="420" Height="180" Style="{StaticResource BorderStyle}">
+        <Grid RenderOptions.BitmapScalingMode="HighQuality">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="TitleText"
+                       Text="SELECT A PIECE"
+                       Style="{StaticResource TextStyle}"
+                       FontSize="28"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+
+            <UniformGrid Grid.Row="1"
+                         Rows="1"
+                         Columns="4"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         Margin="0,10,0,0"
+                         Cursor="Hand">
+                <Image x:Name="QueenImg"
+                       Width="95" 
+                       Height="95"
+                       MouseDown="QueenImg_MouseDown"
+                       Source="Assets/QueenW.png"
+                       Stretch="Uniform"/>
+
+                <Image x:Name="RookImg"
+                       Width="90" 
+                       Height="90"
+                       MouseDown="RookImg_MouseDown"
+                       Source="Assets/RookW.png"
+                       Stretch="Uniform"/>
+
+                <Image x:Name="BishopImg"
+                       Width="90" 
+                       Height="90"
+                       MouseDown="BishopImg_MouseDown"
+                       Source="Assets/BishopW.png"
+                       Stretch="Uniform"/>
+
+                <Image x:Name="KnightImg"
+                       Width="90" 
+                       Height="90" 
+                       MouseDown="KnightImg_MouseDown"
+                       Source="Assets/KnightW.png"
+                       Stretch="Uniform"/>
+            </UniformGrid>
+        </Grid>
+    </Border>
+</UserControl>
